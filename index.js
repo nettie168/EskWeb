@@ -30,7 +30,7 @@ app.get("/blogs", (req,res) =>{
   app.get("/blogs/:articles", (req,res) =>{
     res.render("blog.ejs",{
       blogThumbnailImg: "\\"+"magicbook160.png",
-      blogHeadImg: "\\"+"headerdemo.png", //__dirname + "\\" + "public" +"\\" +"lavender-shrooms-200.png",
+      blogHeadImg: "\\"+"headerdemo.png",
       blogTitle: req.params.articles,
       blogSummary: "Get 3 tips to improve your habits",
       blogTime: "2min",
