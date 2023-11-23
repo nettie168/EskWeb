@@ -1,0 +1,58 @@
+<%- include("partials/header.ejs") %>
+
+<body>
+
+  <!--  <div class="container-fluid text-center dark-green">
+
+        <h1 class="h1normal">Blogs</h1>
+     
+    </div>-->
+
+<!--<div class="container-fluid blogHeadImg ">
+    <%// if(locals.blogHeadImg){ %>
+         <img class="img-fluid text-center" src="<%= blogHeadImg %>" onError="this.onerror=null;this.src='/header200.png';" > 
+    <%// } %>
+</div> -->
+
+
+<!--<img class="blog-header-mountains" src="\mountains-purple.png" alt="purple mountains">
+-->
+
+
+ 
+    <div class="container-fluid blogTitle"> 
+    <% if(locals.blogTitle){ %>
+        <h1 class="h1normal"><%= blogTitle.replaceAll("-"," ").replaceAll("__","?") %></h1>
+    <%}else{ %>
+        <p>Blog Title not found, sorry about that, here's a substitute</p>
+        <h1 class="blog-title">Wonderfully Helpful Eskape Blog Title</h1>
+    <% } %>
+    </div>
+
+<div class="container-fluid blog">
+
+
+   <!-- <% //if(locals.blogSummary){ %>
+        <p class="text-center"><%= blogSummary %></p>
+    <% //} %> -->
+
+   <!-- <% if(locals.blogTime){ %>
+        <p id="blogTime">Read time: <%= blogTime  %></p>
+    <% } %>-->
+
+    <div class="blogContent">
+        <% if(locals.filename){ %>
+            <% var content = "blogs/"+ filename %>
+            <%- include(content) %>
+        <%}else{ %>
+            <p>Sorry, Blog is not available right now</p>
+        <% } %>
+    </div>
+
+    <p class="text-center"> <a class="purple-button abtn" href="/blogs">Return to blogs</a></p>
+
+</div>
+
+</body>
+
+<%- include("partials/footer.ejs") %>

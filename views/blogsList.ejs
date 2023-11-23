@@ -1,0 +1,80 @@
+<html>
+    <%- include("partials/header.ejs")  %>
+
+  <body>
+
+    <div class="container-fluid text-center dark-green">
+
+        <h1 class="h1normal">Blogs</h1>
+        <div class="container short-text">      
+          <p>Read our scientifically-researched work on <em>self-care</em> and <em>productivity</em>.</p>
+        </div>
+
+    </div>
+
+<div class="container-fluid text-center">
+
+  <!--<div class="dark-purple">-->
+    <h3 class="blog-header text-center">Featured</h3>
+
+
+  <% for (post of featuredPosts) { %>
+    <div class="blogCard">
+      <a href="/blogs/<%= post %>">
+        <div class="blogCardImg">
+          <img  src="<%="/blogs/"+post.replaceAll("-"," ") +".jpeg" %>" onError="this.onerror=null;this.src='/earthdarkleft.png';">
+        </div>
+
+        <div class="blogCardInfo">
+          <!--<p>2 min</p>-->
+          <h3><%= post.replaceAll("-"," ").replaceAll("-"," ").replaceAll("__","?") %></h3>
+        </div>
+
+      </a>
+    </div>
+  <% } %>
+<!--</div>-->
+
+</div>
+
+<hr>
+
+
+<div class="container text-center"> 
+  <h3 class="blog-header text-center">All Blogs</h3>
+
+  <% for (post of blogPosts) { %>
+    <div class="blogCard">
+      <a href="/blogs/<%= post.slice(0, -4) %>">
+        <img class="blogCardImg" src="<%="/blogs/"+post.slice(0,-4).replaceAll("-"," ")+".jpeg" %>" onError="this.onerror=null;this.src='/earthdarkleft.png';">
+
+        <div class="blogCardInfo">
+          <!--<p>2 min</p>-->
+          <h3><%= post.slice(0,-4).replaceAll("-"," ").replaceAll("__","?") %></h3>
+        </div>
+
+      </a>
+    </div>
+  <% } %>
+
+</div>
+
+
+
+   <!--<div id="blog">
+    <% for (post of blogPosts) { %>
+      <a href="/blogs/<%= post.slice(0, -4) %>">
+        <div class="post">
+          <%= post.slice(0,-4).toUpperCase() %>  
+        </div>
+      </a>
+    <% } %>
+  </div>-->
+
+  <%- include("partials/footer.ejs")  %>
+
+
+  </body>
+
+
+</html>
