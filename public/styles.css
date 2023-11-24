@@ -717,7 +717,7 @@ a.skyblue-button{
   margin: 20px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  width: 300px; /* 400px*/
+  width: 280px; /* 400px*/
   height: 260px; /*300px*/
   background-color: azure;
   display: inline-block;
@@ -750,7 +750,7 @@ a.skyblue-button{
 }
 
 .blogCardImg{
-  width: 300px;
+  width: 280px;
   height: 160px;
   overflow: hidden;
   display: inline-block;
@@ -758,7 +758,7 @@ a.skyblue-button{
 }
 
 .blogCard img{
-  width: 300px;
+  width: 280px;
   height: 160px;
   object-fit: cover;
 }
@@ -768,7 +768,8 @@ a.skyblue-button{
   padding-right: 10px;
 }
 
-@media (min-width: 768px) {
+
+@media (min-width: 480px) {
   .blogCard {
     width: 300px; /* 200px*/
   }
@@ -785,51 +786,11 @@ a.skyblue-button{
 
 /*BlogPage*/
 
-.blog-header-mountains{
-  width: 60%; /*90%*/
-  margin-left: auto;
-  margin-right: auto; 
-  margin-top: 20px;
-}
-
 .blog{
   background-color: rgb(209, 235, 248);
- 
-  width: 90%;
+  width: 95%;
   margin-left: auto;
   margin-right: auto;
-}
-
-.blogTitle{
-  width: 90%;
-  padding-left: 10%;
-  padding-right: 10%;
-  margin: auto;
-  background-color: #0a7814ff;
-  color: rgb(209, 235, 248);
-}
-
-#blogTime{
-  /*text-align: end;*/
-}
-
-
-.blogContent{
-  padding-left: 5%;
-  padding-right: 5%;
-  font-size: 1.2rem;
-}
-
-.blogContent h2{
-  margin-bottom: 20px;
-}
-
-@media (min-width: 992px) {
-  .blog, .blogTitle, .blog-header-mountains{
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 
 .summary{
@@ -841,12 +802,34 @@ a.skyblue-button{
   font-size: 1.2rem;
 }
 
+.blogTitle{
+  width: 95%;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin: auto;
+  background-color: #0a7814ff;
+  color: rgb(209, 235, 248);
+}
+
+#blogTime{
+  /*text-align: end;*/
+}
+
+.blogContent{
+  padding-left: 2%;
+  padding-right: 2%;
+  font-size: 1.2rem;
+}
+
+.blogContent h2{
+  margin-bottom: 20px;
+}
+
 .blog-img{
-  width: 300px;
+  width: 280px;
   align-self: center;
   margin-top: 40px;
   margin-bottom: 20px;
-
 
   border-radius: 15px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -864,3 +847,26 @@ a.skyblue-button{
   margin-bottom: 40px;
   text-align: center;
 }
+
+@media (min-width: 480px) {
+  .blog, .blogTitle{
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .blog-img{
+    width: 300px;
+  }
+}
+
+@media (min-width: 992px) {
+  .blog, .blogTitle{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+
