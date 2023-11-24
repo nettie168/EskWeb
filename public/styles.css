@@ -860,11 +860,21 @@ a.skyblue-button{
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
+  .blog, .blogTitle{
+    width: 70%;
+  }
+}
+
+@media (min-width: 978px) {
+  .blog, .blogTitle{
+    width: 60%;
+  }
+}
+
+@media (min-width: 1200px) {
   .blog, .blogTitle{
     width: 50%;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
