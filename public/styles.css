@@ -536,26 +536,26 @@ a.skyblue-button{
   width: 15%;
 }
 
-.patreons{
+.patreons-img{
   padding-top: 20px;
   padding-bottom: 20px;
   width: 70%;
 }
 
 @media (min-width: 768px) {
-  .patreons{
+  .patreons-img{
     width: 60%;
   }
 }
 
 @media (min-width: 1200px) {
-  .patreons{
+  .patreons-img{
     width: 50%;
   }
 }
 
 @media (min-width: 1200px) {
-  .patreons{
+  .patreons-img{
     width: 40%;
   }
 }
@@ -563,6 +563,8 @@ a.skyblue-button{
 .quote{
   color: #473b79;
   font-size: 1.1rem;
+  padding: 50px;
+  background-color: #1CB0F6;
 }
 
 .work-list img{
@@ -571,6 +573,22 @@ a.skyblue-button{
   width: auto;
   margin: 10px;
 }
+
+
+.supporters{
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.supporters li{
+  display: inline-block;
+  padding: 10px;
+}
+
+
+
 
 
 .centerhori {
@@ -786,11 +804,13 @@ a.skyblue-button{
 
 /*BlogPage*/
 
+
 .blog{
   background-color: rgb(209, 235, 248);
   width: 95%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 20px;
 }
 
 .summary{
@@ -878,5 +898,23 @@ a.skyblue-button{
   }
 }
 
-
+/*Fraction*/
+.fraction {
+  display: inline-block;
+  vertical-align: middle; 
+  margin: 0 0.2em 0.4ex;
+  text-align: center;
+  & > span{
+    display: block;
+    padding-top: 0.15em;
+  }
+  & span{
+    &.fdn{
+      border-top: thin solid black;
+    }
+    &.bar{
+      display: none;
+    }
+  }
+}
 

@@ -1,0 +1,55 @@
+<%- include("partials/header.ejs") %>
+
+<body>
+
+ 
+    <div class="container-fluid blogTitle"> 
+    <% if(locals.Title){ %>
+        <h1 class="h1normal"><%= Title.slice(2).replaceAll("-"," ").replaceAll("__","?").replaceAll("_"," ") %></h1>
+    <%}else{ %>
+        <p>Blog Title not found, sorry about that, here's a substitute</p>
+        <h1 class="blog-title">Wonderfully Helpful Eskape Blog Title</h1>
+    <% } %>
+    </div>
+
+<div class="container-fluid blog">
+
+    <div class="blogContent">
+        <% if(locals.filename){ %>
+            <% var content = "science_bites/"+ filename %>
+            <%- include(content) %>
+        <%}else{ %>
+            <p>Sorry, Blog is not available right now</p>
+        <% } %>
+    </div>
+
+
+</div>
+
+<p class="text-center"> <a class="purple-button abtn" href="/science_bites">Return to Science Bites</a></p>
+
+<div class="container-fluid text-center">
+
+    <!--<div class="dark-purple">-->
+      <h3 class="blog-header text-center">Tea, Biscuits and Robots (Machine Learning)</h3>
+  
+    <% for (post of scienceBites) { %>
+      <div class="blogCard">
+        <a href="/science_bites/<%= post.slice(0, -4) %>">
+          <img class="blogCardImg" src="<%="/scienceBites/"+post.slice(2,-4).replaceAll("-"," ")+".jpg" %>" onError="this.onerror=null;this.src='/earthdarkleft.png';">
+  
+          <div class="blogCardInfo">
+            <!--<p>2 min</p>-->
+            <h3><%= post.slice(0,-4).replaceAll("-"," ").replaceAll("__","?").replaceAll("_"," ") %></h3>
+          </div>
+  
+        </a>
+      </div>
+    <% } %>
+  <!--</div>-->
+  
+  </div>
+
+</body>
+
+<%- include("partials/footer.ejs") %>

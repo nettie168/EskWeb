@@ -39,6 +39,30 @@ app.get("/blogs", (req,res) =>{
 
 });
 
+
+app.get("/science_bites", (req,res) =>{
+    const scienceBite = fs.readdirSync(__dirname + "/" +"views" + "/" +"science_bites").filter(file => file.endsWith('.ejs'));
+
+    res.render("science_bites_List.ejs", {
+        scienceBites: scienceBite
+      })
+  });
+
+  app.get("/science_bites/:articles", (req,res) =>{
+    const scienceBite = fs.readdirSync(__dirname + "/" +"views" + "/" +"science_bites").filter(file => file.endsWith('.ejs'));
+
+    res.render("science_bite.ejs",{
+      Title: req.params.articles,
+      filename: req.params.articles+".ejs",
+      scienceBites: scienceBite
+    })
+
+});
+
+app.get("/chipmunk", (req,res)=>{
+  res.sendFile(__dirname +"/views/science_bites/Tea_and_Biscuits_with_Chipmunk.html")
+});
+
 /*app.listen(port, () =>{
     console.log(`Server running on port ${port}`)
 });*/

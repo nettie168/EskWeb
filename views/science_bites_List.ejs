@@ -1,0 +1,49 @@
+<html>
+    <%- include("partials/header.ejs")  %>
+
+  <body>
+
+    <div class="container-fluid text-center dark-green">
+
+        <h1 class="h1normal">Science Bites</h1>
+        <div class="container short-text">   
+            <p>I believe science and maths can be good for the soul as we can understand how this beautiful blue ball of ours work.</p>   
+        </div>
+
+    </div>
+
+<div class="container-fluid text-center">
+
+  <!--<div class="dark-purple">-->
+    <h3 class="blog-header text-center">Tea, Biscuits and Robots (Machine Learning)</h3>
+
+  <% for (post of scienceBites) { %>
+    <div class="blogCard">
+      <a href="/science_bites/<%= post.slice(0, -4) %>">
+        <img class="blogCardImg" src="<%="/scienceBites/"+post.slice(0,-4).replaceAll("-"," ")+".jpg" %>" onError="this.onerror=null;this.src='/earthdarkleft.png';">
+
+        <div class="blogCardInfo">
+          <!--<p>2 min</p>-->
+          <h3><%= post.slice(2,-4).replaceAll("-"," ").replaceAll("__","?").replaceAll("_"," ") %></h3>
+        </div>
+
+      </a>
+    </div>
+  <% } %>
+<!--</div>-->
+
+</div>
+
+<hr>
+
+
+</div>
+
+
+  <%- include("partials/footer.ejs")  %>
+
+
+  </body>
+
+
+</html>
