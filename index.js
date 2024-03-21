@@ -2,12 +2,28 @@ import express from "express";
 import fs from "fs";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
+//security for Denial of Service of HTTP server
+import net from 'node:net';
+//security for headers
+import helmet from "helmet";
 
 const port = 3000;
 const app = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+
+const server = net.createServer(function (socket) {
+  // socket.on('error', console.error) // this prevents the server to crash
+  socket.write('Echo server\r\n');
+  socket.pipe(socket);
+});
+
+server.listen(5000, '0.0.0.0');
+
+
 app.use(express.static("public"));
+app.use(helmet());
+
 
 app.get("/", (req,res) => {
     res.render("index.ejs")
