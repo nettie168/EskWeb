@@ -87,4 +87,13 @@ app.get("/chipmunk", (req,res)=>{
     console.log(`Server running on port ${port}`)
 });*/
 
+
+app.use(function(req, res, next) {
+  if (res.status === 404) {
+  res.status(404).sendFile(__dirname + "/views/404.html");
+  } else {
+  res.status(500).sendFile(__dirname + "/views/500.html");
+  }
+  });
+
 app.listen(process.env.PORT || port);
