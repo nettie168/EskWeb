@@ -18,9 +18,6 @@ const server = net.createServer(function (socket) {
   socket.pipe(socket);
 });
 
-server.listen(5000, '0.0.0.0');
-
-
 app.use(express.static("public"));
 app.use(helmet());
 app.use('/robots.txt', function (req, res, next) {
