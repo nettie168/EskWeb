@@ -35,7 +35,7 @@ app.get("/patreon", (req,res) => {
 
 app.get("/blogs", (req,res) =>{
     const posts = fs.readdirSync(__dirname + "/" +"views" + "/" +"blogs").filter(file => file.endsWith('.ejs'));
-    const featuredPosts = ["What-are-habits__-And-why-are-they-important__","Having-a-bad-day__-Try-these-5-tips","You-are-made-of-stardust"]
+    const featuredPosts = ["What-are-habits__-And-why-are-they-important__","Having-a-bad-day__-Try-these-5-tips","6-Tips-on-doing-tasks-when-you-don’t-want-to"]
 
     res.render("blogsList.ejs", {
         featuredPosts: featuredPosts,
