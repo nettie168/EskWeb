@@ -7,7 +7,7 @@ import { fileURLToPath } from "url";
 //security for headers
 //import helmet from "helmet";
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 const app = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -16,6 +16,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
   socket.write('Echo server\r\n');
   socket.pipe(socket);
 });*/
+
+// Set the view engine to ejs, added for Vercel
+app.set('view engine', 'ejs');
 
 app.use(express.static("public"));
 //app.use(helmet());
@@ -92,4 +95,8 @@ app.use(function(req, res, next) {
   }
   });
 
-app.listen(process.env.PORT || port);
+//app.listen(process.env.PORT || port);
+
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`)
+});
